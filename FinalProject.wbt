@@ -1,0 +1,246 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  info [
+    "CSCI 3302 Lab 4: Mapping"
+    "Prof. Brad Hayes, University of Colorado Boulder, Fall 2020"
+  ]
+  title "E-Puck"
+  coordinateSystem "NUE"
+  lineScale 0.04
+}
+Viewpoint {
+  orientation 0.6160959353008078 -0.7865320032724462 -0.04234626706163729 5.675964737396189
+  position 0.9142907486073829 0.9995412946784858 2.699109787951903
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+CardboardBox {
+  translation 0.534493 0.05 0.195192
+  name "cardboard box(3)"
+  size 0.75 0.2 0.25
+}
+CardboardBox {
+  translation -0.335206 0.05 0.201595
+  name "cardboard box(2)"
+  size 0.5 0.2 0.25
+}
+CardboardBox {
+  translation -0.079457 0.05 -0.29686
+  name "cardboard box(4)"
+  size 1 0.2 0.25
+}
+CardboardBox {
+  translation 0.295756 0.05 0.69997
+  name "cardboard box(1)"
+  size 0.75 0.2 0.25
+}
+RectangleArena {
+  translation 0.164708 6.43929e-14 0.197458
+  floorSize 2 2.25
+}
+Solid {
+  translation 0.176395 2.04281e-14 -0.804907
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "FInish"
+  recognitionColors [
+    0.0901961 0.952941 0.133333
+  ]
+}
+Solid {
+  translation 0.546194 2.35367e-14 -0.311736
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 7"
+}
+Solid {
+  translation -0.708312 5.63993e-14 -0.306583
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 6"
+}
+Solid {
+  translation -0.714998 -1.42109e-14 0.206428
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 3"
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 0.036161 -4.44096e-16 0.199822
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 4"
+}
+Solid {
+  translation 1.04604 -4.44092e-16 0.192738
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 5"
+}
+Solid {
+  translation 0.79515 -4.44089e-16 0.696533
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 2"
+}
+Solid {
+  translation -0.216213 -8.88178e-16 0.694813
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Target 1"
+}
+Solid {
+  translation 0.161368 -4.44089e-16 1.18106
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        transparency 0.01
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.01
+        radius 0.125
+      }
+    }
+  ]
+  name "Start"
+}
+DEF EPUCK E-puck {
+  hidden translation_1 -0.026000163759919752 0.02000129172769444 1.6511218585172788e-06
+  hidden rotation_1 0.9999999999353835 7.3054650242665875e-06 -8.709941307511303e-06 0.011928992195173472
+  hidden translation_2 0.025999835820885393 0.020001425538746922 -1.4256433845903597e-06
+  hidden rotation_2 -0.9999999999963882 2.3174242334445286e-06 1.3612687563598316e-06 6.270781320770237
+  translation 0.1973780015446373 -0.00010887342266606426 1.147929958508417
+  rotation 0.8136045896850709 0.023518988138965694 0.5809427070205003 -0.0001053071795862337
+  name "e-puck(1)"
+  controller "FinalProject"
+  turretSlot [
+    RobotisLds01 {
+    }
+    Display {
+      width 300
+      height 300
+    }
+  ]
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+Mavic2Pro {
+  hidden position_0_0 5.648071939150601e-09
+  hidden linearVelocity_0 -1.1399960556059305e-10 1.281071890665268e-13 7.208547504541467e-15
+  hidden angularVelocity_0 5.755976149916252e-13 -2.4256189530077675e-09 1.8203101648847757e-13
+  hidden position_6_0 1.2248097379557164e-08
+  hidden position_7_0 4.796192586709478e-09
+  translation -0.48510075250719664 0.06557267222577437 0.9159356365187665
+  rotation -0.5633751129748125 0.5633790722715808 0.6043281418294454 2.0543988186150823
+  controller "mavic"
+  cameraSlot [
+    Display {
+      width 400
+      height 240
+    }
+    Camera {
+      width 400
+      height 240
+      recognition Recognition {
+      }
+    }
+  ]
+}
