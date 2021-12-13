@@ -1,0 +1,5 @@
+The following is a loose implementation of object detection through a DJI Mavic drone. Upon start of the WeBots controller, the mavic rises in altitude and outputs the location
+of color-specified objects on screen. The type of object to check for is determined based upon the 'obj' variable. The obj can be specified as "goal" to locate the green goal
+object on screen, "obstacles" to specify the red waypoint identifiaction, or "testing" to specify a certain color value that should be identified in the Taskbar window created by 
+OpenCV. The drone will eventually crash after identifying objects, this is normal consiudering there was not enough time to impliment automated movement control.
+Manual control can be used by the specified instructions given in the console output, however it is buggy.
