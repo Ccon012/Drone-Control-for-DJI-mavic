@@ -1,4 +1,4 @@
-
+#Credit to WeBots for the Mavic controller in C for robot movement: https://github.com/cyberbotics/webots/blob/released/projects/robots/dji/mavic/controllers/mavic2pro/mavic2pro.c 
 import math
 import time
 import random
@@ -78,6 +78,7 @@ while (robot.step(timestep) != -1):
         break;
 def doNothing(x):
     pass
+# credit to Khawar Jamil for the openCV trackbar useage and object detection: https://medium.com/globant/maneuvering-color-mask-into-object-detection-fce61bf891d1 
 cv2.namedWindow('Track Bars', cv2.WINDOW_NORMAL)
 cv2.createTrackbar('min_blue', 'Track Bars', 0, 255, doNothing)
 cv2.createTrackbar('min_green', 'Track Bars', 0, 255, doNothing)
@@ -94,8 +95,6 @@ while (robot.step(timestep) != -1):
         image = np.frombuffer(data, np.uint8).reshape((camera.getHeight(), camera.getWidth(), 4))
         img = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-        lower_blue = np.array([40,25,227])
-        upper_blue = np.array([50,35,250])
         if obj is 'test':
             min_blue = cv2.getTrackbarPos('min_blue', 'Track Bars')
             min_green = cv2.getTrackbarPos('min_green', 'Track Bars')
@@ -117,13 +116,11 @@ while (robot.step(timestep) != -1):
             max_blue =144
             max_green =255
             max_red =255
-    
-    #using inrange function to turn on the image pixels where object threshold is matched
         mask = cv2.inRange(hsv, (min_blue, min_green, min_red), (max_blue, max_green, max_red))
-    #showing the mask image
         cv2.imshow('Mask Image', mask)
         key = cv2.waitKey(timestep)
         if mask is not None:
+            #credit to Opencv documentation for contour checking and position approximation: https://docs.opencv.org/3.1.0/df/d9d/tutorial_py_colorspaces.html 
             contours,hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
             if contours:
                 for cnt in contours:
@@ -140,9 +137,6 @@ while (robot.step(timestep) != -1):
                     cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
                 cv2.imshow("preview", image)
                 cv2.waitKey(timestep)
-        #ir = display.imageNew(data, Display.BGRA, width, height)
-        #img_gray = cv2.cvtColor(data, cv2.COLOR_BGR2GRAY)
-        #display.imageDelete(ir)
     time = robot.getTime();  # in seconds.
 
     roll = InertialUnit.getRollPitchYaw(imu)[0] + np.pi / 2.0;
